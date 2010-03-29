@@ -1,1 +1,1 @@
-<?php include(APP.'missioncontrol_plugins'.DS.'core'.DS.'views'.DS.'layouts'.DS.'admin_plain.ctp')?>
+<?php include(APP.'plugins'.DS.'core'.DS.'views'.DS.'layouts'.DS.'admin_plain.ctp')?>

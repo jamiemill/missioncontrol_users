@@ -5,7 +5,7 @@
 * user registration and all kinds of user-related stuff out of controllers into here later
 */
 
-require_once(APP.'missioncontrol_plugins'.DS.'core'.DS.'tests'.DS.'cases'.DS.'abstract'.DS.'mission_control_test_case.php');
+require_once(APP.'plugins'.DS.'core'.DS.'tests'.DS.'cases'.DS.'abstract'.DS.'mission_control_test_case.php');
 
 App::import('component','Users.UserTools');
 
