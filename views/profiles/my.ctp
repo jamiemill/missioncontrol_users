@@ -18,7 +18,7 @@ $html->addCrumb('My Profile');
 				<?php echo $form->input('User.id'); ?>
 				<?php echo $form->input('User.first_name')?>
 				<?php echo $form->input('User.last_name')?>
-			    <?php echo $form->input('User.email',array('after'=>' '.__('(used to log in)',true))) ?> 
+				<?php echo $form->input('User.email',array('after'=>' '.__('(used to log in)',true))) ?> 
 		
 				<div class="input password">
 					<label><?php __('Password') ?></label>

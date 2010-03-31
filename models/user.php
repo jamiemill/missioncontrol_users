@@ -59,13 +59,13 @@ class User extends UsersAppModel {
 	} 
 	
 	function confirmPassword($data) {
-        $valid = false;
-        if ($data['password'] == Security::hash(Configure::read('Security.salt') . $this->data['User']['password_confirm'])) {
-            $valid = true;
-        }
-        return $valid;
-    }
-    
+		$valid = false;
+		if ($data['password'] == Security::hash(Configure::read('Security.salt') . $this->data['User']['password_confirm'])) {
+			$valid = true;
+		}
+		return $valid;
+	}
+	
 /**
  * Custom validation function to verify that the contents of the specified form fields is identical.
  *
