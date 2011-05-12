@@ -29,7 +29,6 @@ class UsersPermissionsTask extends Shell {
 	function execute() {	
 		
 		$this->allow(array('model'=>'Group','foreign_key'=>USER_GROUP_ADMINISTRATOR), 'controllers/Users');
-		$this->allow(array('model'=>'Group','foreign_key'=>USER_GROUP_USER), 'controllers/Users/Users/profile');
 		$this->allow(array('model'=>'Group','foreign_key'=>USER_GROUP_USER), 'controllers/Users/Users/change_password');
 		$this->allow(array('model'=>'Group','foreign_key'=>USER_GROUP_USER), 'controllers/Users/Profiles/my');
 	}
