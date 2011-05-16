@@ -27,7 +27,11 @@ class UsersController extends UsersAppController {
 				$loginData['User']['modified'] = $this->Auth->user('modified'); 
 				$loginData['User']['last_login'] = date("Y-m-d H:i:s");
 				$this->User->save($loginData);
-				$fallbackRedirect = Configure::read('User.Login.fallbackRedirect');
+				if(isset($this->params['admin'])) {
+					$fallbackRedirect = Configure::read('User.Login.fallbackRedirect');
+				} else {
+					$fallbackRedirect = Configure::read('User.Login.nonAdminFallbackRedirect');
+				}
 				if(!$fallbackRedirect) $fallbackRedirect = '/';
 				$this->redirect($this->Auth->redirect($fallbackRedirect));
 			}			
@@ -115,7 +119,7 @@ class UsersController extends UsersAppController {
 		if(!$hash) {
 			$this->set('message', __('No ticket provided.',true)); 
 		}
-		elseif ( $email = $this->Tickets->get($hash) ) { 
+		elseif ( $email = $this->Tickets->get($hash) ) {
 
 			$authUser = $this->User->findByEmail($email); 
 			if (!empty($authUser)) { 
@@ -224,6 +228,11 @@ class UsersController extends UsersAppController {
 	}
 	
 	function change_password() {
+		if(isset($this->params['admin'])) {
+			$this->layout = 'admin_plain';
+		} else {
+			$this->layout = 'plain';
+		}
 		if (empty($this->data)) {	
 			$this->User->id = $this->Auth->user('id');
 			$this->data = $this->User->read(); 	
