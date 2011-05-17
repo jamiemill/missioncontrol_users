@@ -135,7 +135,7 @@ class UsersController extends UsersAppController {
 						$theUser = $this->User->findById($this->data['User']['id']); 
 						//whitelist only the password field - no sneaky group or active state changes here please
 						if ($this->User->save($this->data,true,array('password','password_confirm'))) { 
-							$this->Tickets->delete($hash); 
+							$this->Tickets->del($hash); 
 							$this->Session->setFlash(sprintf(__('%s updated.',true),__('Password',true)));
 							$this->redirect(array('plugin'=>'users','controller' => 'users', 'action' => 'login'));
 							return true;
