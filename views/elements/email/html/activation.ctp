@@ -13,4 +13,4 @@
 	
 <?php endif ?>
 
-<p><?php __('After this, you can log into your account at:') ?> <?php echo $html->link($html->url('/',true)) ?></p>
+<p><?php __('After this, you can log into your account at:') ?> <?php echo $html->link($html->url('/users/users/login',true)) ?></p>
