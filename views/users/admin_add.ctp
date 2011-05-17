@@ -16,7 +16,6 @@ $html->addCrumb('add');
 			<?php echo $form->input('email',array('after'=>' '.__('(used to log in)',true))) ?> 
 			<?php echo $form->input('activated')?>
 			<?php echo $form->input('enabled')?>
-			<?php echo $form->input('activation_sent')?>
 			<?php echo $form->input('password', array('type' => 'password','value'=>''))?>
 			<?php echo $form->input('password_confirm', array('type' => 'password','value'=>''))?>
 			<?php echo $form->input('group_id')?>

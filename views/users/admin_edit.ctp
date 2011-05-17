@@ -18,7 +18,12 @@ $html->addCrumb('edit');
 			<?php echo $form->input('email',array('after'=>' '.__('(used to log in)',true))) ?> 
 			<?php echo $form->input('activated')?>
 			<?php echo $form->input('enabled')?>
-			<?php echo $form->input('activation_sent')?>
+			
+			<div class="input">
+				<label>Activation Sent</label>
+				<?php echo $this->Layout->flag($data['User']['activation_sent']) ?>
+			</div>
+
 			<?php echo $form->input('group_id')?>
 			<?php echo $form->end('save') ?> 
 		</div>
